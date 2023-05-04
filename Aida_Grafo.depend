@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1683234814 source:e:\programas\aida_grafo\src\grafo.cpp
+	"Grafo.h"
+
+1682924551 e:\programas\aida_grafo\include\grafo.h
+	<list>
+	<map>
+
+1683241773 source:e:\programas\aida_grafo\main.cpp
+	"Grafo.h"
+	"iostream"
+	"Colores.cpp"
+
+1683241809 e:\programas\aida_grafo\colores.cpp
+	<set>
+	<iostream>
+
+1683241468 source:e:\programas\aida_grafo\colores.cpp
+	<set>
+	<iostream>
+
