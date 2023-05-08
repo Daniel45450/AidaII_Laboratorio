@@ -10,7 +10,7 @@ struct Color {
     int b=0;
 };
 
-bool operator<(const Color& color_a, const Color& color_b)
+bool operator<(const Color & color_a, const Color & color_b)
 {
     if (color_a.r != color_b.r) {
         return color_a.r < color_b.r;
