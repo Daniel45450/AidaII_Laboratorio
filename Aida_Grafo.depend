@@ -6,16 +6,25 @@
 	<list>
 	<map>
 
-1683242018 source:e:\programas\aida_grafo\main.cpp
+1683566146 source:e:\programas\aida_grafo\main.cpp
 	"Grafo.h"
-	"iostream"
+	"Color.h"
 	"Colores.cpp"
+	"iostream"
+	<set>
 
-1683564515 e:\programas\aida_grafo\colores.cpp
+1683566545 e:\programas\aida_grafo\colores.cpp
 	<set>
 	<iostream>
+	"Color.h"
 
-1683242018 source:e:\programas\aida_grafo\colores.cpp
+1683566545 source:e:\programas\aida_grafo\colores.cpp
 	<set>
 	<iostream>
+	"Color.h"
+
+1683566446 source:e:\programas\aida_grafo\src\color.cpp
+	"Color.h"
+
+1683566262 e:\programas\aida_grafo\include\color.h
 

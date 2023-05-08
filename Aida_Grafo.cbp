@@ -34,9 +34,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Color.h" />
 		<Unit filename="include/Grafo.h" />
 		<Unit filename="main.cpp" />
-		<Unit filename="Colores.cpp" />
+		<Unit filename="src/Color.cpp" />
 		<Unit filename="src/Grafo.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

@@ -1,7 +1,8 @@
 #include "Grafo.h"
-
-#include "iostream"
+#include "Color.h"
 #include "Colores.cpp"
+#include "iostream"
+#include <set>
 
 using namespace std;
 
@@ -58,7 +59,7 @@ int main(int argc, char **argv)
 	int destino = 6;
 
 	set<Color> colores;
-	cargar_colores(colores);
+	//cargar_colores(colores);
 
 	//falta:
 	//Asociar un color a todo los vertices
