@@ -59,5 +59,10 @@ template <typename T> int Colores<T>::obtener_cantidad_colores() const
     return this->colores.size();
 }
 
+template <typename T> bool Colores<T>::existe_color(int n) const
+{
+    return (n < this->colores.size());
+}
+
 template class Colores<Color>;
 template class Colores<int>;

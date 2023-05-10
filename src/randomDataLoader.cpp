@@ -1,4 +1,5 @@
 #include "randomDataLoader.h"
+#include <cctype>
 
 
 template <typename T, typename C> randomDataLoader<T,C>::randomDataLoader()
@@ -46,7 +47,7 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar_grafo_aleat
         }
     }
     cout << "\n" << endl;
-    cout << "----- GENERACION DE ARISTAS -----" << endl;
+    cout << "----- GENERACION DE ARCOS -----" << endl;
     cout << "tener en cuenta los vertices generados" << endl;
     cout << "\n" << endl;
     cout << "Ingresa la cantidad de arcos a generar: ";
@@ -78,14 +79,25 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar(Grafo<T> & 
     list<int> vertices;
     grafo.devolver_vertices(vertices);
     list<int>::iterator it_V = vertices.begin();
+    char aleatorio;
+    cout << "Cargar colores de forma aleatoria? (y/n): ";
+    cin >> aleatorio;
+    srand(time(nullptr));
     int id;
     while(it_V != vertices.end())
     {
-        cout << "\n";
-        cout << "Ingresa el id del color para asignar al vertice: " << *it_V << " (no olvidar el id de la restriccion): ";
-        cin >> id;
-        mapeo_colores.insert({*it_V, colores.buscar_color_posicion(id)});
-        it_V++;
+        if(toupper(aleatorio) == 'N') {
+            cout << "\n";
+            cout << "Ingresa el id del color para asignar al vertice: " << *it_V << " (no olvidar el id de la restriccion): ";
+            cin >> id;
+            it_V++;
+        } else {
+            id = rand() % colores.obtener_cantidad_colores();
+            if(colores.existe_color(id)) {
+                mapeo_colores.insert({*it_V, colores.buscar_color_posicion(id)});
+                it_V++;
+            }
+        }
     }
 }
 
