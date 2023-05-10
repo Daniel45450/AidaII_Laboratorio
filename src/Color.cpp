@@ -48,6 +48,11 @@ bool Color::operator==(const Color & color_a) const
     return (this->r == color_a.obtener_RED()) && (this->g == color_a.obtener_GREEN()) && (this->b == color_a.obtener_BLUE());
 }
 
+bool Color::operator!=(const Color& color_a) const
+{
+    return !(this->r == color_a.obtener_RED() && this->g == color_a.obtener_GREEN() && this->b == color_a.obtener_BLUE());
+}
+
 int Color::obtener_BLUE() const
 {
     return this->b;

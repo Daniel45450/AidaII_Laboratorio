@@ -11,6 +11,7 @@ class Color
         void modificar_color(int r, int g, int b);
         bool operator<(const Color & color_a) const;
         bool operator==(const Color& color_a) const;
+        bool operator!=(const Color& color_a) const;
         Color& operator=(const Color& b);
         int obtener_RED() const;
         int obtener_GREEN() const;

@@ -3,6 +3,7 @@
 #include "iostream"
 #include <set>
 #include "randomDataLoader.h"
+#include "Algoritmos_Busquedas.h"
 
 using namespace std;
 
@@ -28,13 +29,13 @@ ostream & operator << (ostream & salida, const Grafo<C> & grafo)
 	return salida;
 }
 
-ostream & operator << (ostream & salida, const Color c)
+ostream & operator << (ostream & salida, const Color &  c)
 {
 	salida << "    " << c.obtener_RED() << " " << c.obtener_GREEN() << " " << c.obtener_BLUE();
 	return salida;
 }
 
-template <typename T>  ostream & operator << (ostream & salida, const Colores<T> c)
+template <typename T>  ostream & operator << (ostream & salida, const Colores<T> & c)
 {
     for(int i=0; i< c.obtener_cantidad_colores(); i++) {
         salida << "    " << c.buscar_color_posicion(i) << "\n";
@@ -43,74 +44,77 @@ template <typename T>  ostream & operator << (ostream & salida, const Colores<T>
 	return salida;
 }
 
+ostream & operator << (ostream & salida, const map<int,Color> & mapa)
+{
+    for(typename map<int, Color>::const_iterator it_m = mapa.begin(); it_m != mapa.end(); it_m++) {
+        salida << "    " << it_m->first << " -> " << it_m->second << "\n";
+    }
+	return salida;
+}
+
+ostream & operator << (ostream & salida, const list<int> & lista)
+{
+    for(typename list<int>::const_iterator it_l = lista.begin(); it_l != lista.end(); it_l++) {
+        salida << "    " << *it_l;
+    }
+	return salida;
+}
 
 int main(int argc, char **argv)
 {
 	Grafo<int> g;
-	/*
+    int opcion;
+    Color restriccion;
+    bool salir;
+    Colores<Color> colores;
+    map<int, Color> mapeo_colores;
+    while(!salir) {
+        cout << "-- Menu --\n" << endl;
+        cout << "1) Cargar restriccion(rojo en rgb= 255, 0, 0)" << endl;
+        cout << "2) Generar instancia" << endl;
+        cout << "3) Buscar camino restringido" << endl;
+        cout << "4) Salir\n" << endl;
+        cout << "Ingresa una opcion " << endl;
+        cin >> opcion;
+        switch(opcion) {
+            case 1:
+            {
+               int r;
+               int g;
+               int b;
+               cout << "Ingresa el valor r: ";
+               cin >> r;
+               cout << "Ingresa el valor g: ";
+               cin >> g;
+               cout << "Ingresa el valor b: ";
+               cin >> b;
+               restriccion.modificar_color(r,g,b);
+               colores.agregar_color(restriccion);
+               cout << "Se agrego como restriccion el color: " << restriccion << " id: " << colores.obtener_cantidad_colores()-1 << "\n";
+            }
+            case 2: {
+                randomDataLoader<int, Color> loader;
+                loader.cargar(g, colores, mapeo_colores);
+                cout << "Estructura del grafo:\n" << g << "\n" << "Colores creados(r,g,b):\n" << colores << "\n" << "Mapeo de colores:\n"<< mapeo_colores << endl;
+            }
+            case 3: {
+                int origen;
+                int destino;
+                cout << "Ingresa el origen: ";
+                cin >> origen;
+                cout << "Ingresa el destino: ";
+                cin >> destino;
+                list<int> camino;
+                set<int> visitados;
+                buscar_camino(g, origen, destino, restriccion, mapeo_colores, visitados, camino);
+                cout << "Camino:\n";
+                cout << camino << "\n";
+            }
+            case 4: {
+                salir = true;
+            }
+        }
 
-	// Cargamos un grafo dirigido
-	// Primero los vértices
-	g.agregar_vertice(1);
-	g.agregar_vertice(2);
-	g.agregar_vertice(3);
-	g.agregar_vertice(4);
-	g.agregar_vertice(5);
-	g.agregar_vertice(6);
-	g.agregar_vertice(7);
-    g.agregar_vertice(8);
-
-	// Luego los arcos
-	g.agregar_arco(1, 2, 1);
-	g.agregar_arco(1, 3, 1);
-	g.agregar_arco(1, 4, 1);
-	g.agregar_arco(2, 6, 2);
-	g.agregar_arco(3, 5, 3);
-	g.agregar_arco(4, 7, 4);
-	g.agregar_arco(5, 6, 5);
-	*/
-
-	randomDataLoader<int, Color> loader;
-	//loader.cargar_grafo_aleatorio(g);
-	Colores<Color> c;
-	loader.cargar_colores_aleatorio(c);
-	cout << "Colores:\n" << c << "\n";
-
-	// Mostramos el grafo
-	//cout << "Estructura del grafo:\n" << g << "\n";
-
-	int origen = 1;
-	int destino = 6;
-
-	//set<Color> colores;
-	//cargar_colores(colores);
-
-	//falta:
-	//Asociar un color a todo los vertices
-	//buscar_camino(origen, destino);
-
-
+    }
 	return 0;
 }
-
-/*
-void cargar_colores(set<Color> & colores)
-{
-    int cantidad_colores;
-    cout << "Ingrese la cantidad de colores: ";
-    cin >> cantidad_colores;
-    cout << "Se van a generar " << cantidad_colores << " de forma aleatoria (incluyendo el rojo)" << endl;
-
-    Color a(255,0,0);
-
-    colores.insert(a);
-    for(int i=1; i< cantidad_colores; i++)
-    {
-
-        int r = rand() % 255;
-        int g = rand() % 255;
-        int b = rand() % 255;
-        Color c(r,g,b);
-    }
-}
-*/

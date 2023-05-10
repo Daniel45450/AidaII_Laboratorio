@@ -23,7 +23,7 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar_colores_ale
         int b = rand() % 256;
         Color c(r,g,b);
         colores.agregar_color(c);
-        cout << "Se creo el color: " << r << " " << g << " "  << b << endl;
+        cout << "Se creo el color: " << r << " " << g << " "  << b << " id: " << colores.obtener_cantidad_colores()-1 << endl;
     }
 }
 
@@ -57,9 +57,9 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar_grafo_aleat
         int a;
         int b;
         int c;
-        cout << "Ïngresa el vertice a:";
+        cout << "Ingresa el vertice a:";
         cin >> a;
-        cout << "Ïngresa el vertice b:";
+        cout << "Ingresa el vertice b:";
         cin >> b;
         cout << "Ingresa un costo(entero): ";
         cin >> c;
@@ -69,6 +69,24 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar_grafo_aleat
     }
 
     cout << "----- GENERACION DEL GRAFO FINALIZADA -----" << endl;
+}
+
+template <typename T, typename C> void randomDataLoader<T,C>::cargar(Grafo<T> & grafo, Colores<C> & colores, map<int, C> & mapeo_colores)
+{
+    this->cargar_grafo_aleatorio(grafo);
+    this->cargar_colores_aleatorio(colores);
+    list<int> vertices;
+    grafo.devolver_vertices(vertices);
+    list<int>::iterator it_V = vertices.begin();
+    int id;
+    while(it_V != vertices.end())
+    {
+        cout << "\n";
+        cout << "Ingresa el id del color para asignar al vertice: " << *it_V << " (no olvidar el id de la restriccion): ";
+        cin >> id;
+        mapeo_colores.insert({*it_V, colores.buscar_color_posicion(id)});
+        it_V++;
+    }
 }
 
 template class randomDataLoader<int, Color>;

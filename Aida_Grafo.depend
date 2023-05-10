@@ -6,12 +6,13 @@
 	<list>
 	<map>
 
-1683680325 source:e:\programas\aida_grafo\main.cpp
+1683692792 source:e:\programas\aida_grafo\main.cpp
 	"Grafo.h"
 	"Color.h"
 	"iostream"
 	<set>
 	"randomDataLoader.h"
+	"Algoritmos_Busquedas.h"
 
 1683666277 e:\programas\aida_grafo\colores.cpp
 	<set>
@@ -23,10 +24,10 @@
 	<iostream>
 	"Color.h"
 
-1683679781 source:e:\programas\aida_grafo\src\color.cpp
+1683693793 source:e:\programas\aida_grafo\src\color.cpp
 	"Color.h"
 
-1683679530 e:\programas\aida_grafo\include\color.h
+1683691851 e:\programas\aida_grafo\include\color.h
 
 1683679933 source:e:\programas\aida_grafo\src\colores.cpp
 	"Colores.h"
@@ -35,13 +36,23 @@
 1683679933 e:\programas\aida_grafo\include\colores.h
 	<vector>
 
-1683679077 source:e:\programas\aida_grafo\src\randomdataloader.cpp
+1683692697 source:e:\programas\aida_grafo\src\randomdataloader.cpp
 	"randomDataLoader.h"
 
-1683677527 e:\programas\aida_grafo\include\randomdataloader.h
+1683684380 e:\programas\aida_grafo\include\randomdataloader.h
 	"Grafo.h"
 	"Color.h"
 	"Colores.h"
 	<iostream>
 	<ctime>
+
+1683693944 source:e:\programas\aida_grafo\src\algoritmos_busquedas.cpp
+	"Algoritmos_Busquedas.h"
+	<iostream>
+
+1683691553 e:\programas\aida_grafo\include\algoritmos_busquedas.h
+	"Color.h"
+	<set>
+	"Colores.h"
+	"Grafo.h"
 

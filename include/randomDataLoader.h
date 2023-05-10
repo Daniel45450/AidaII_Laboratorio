@@ -17,7 +17,7 @@ template <typename T, typename C> class randomDataLoader
         void cargar_grafo_aleatorio(Grafo<T> & grafo); //Carga un grafo
         void cargar_colores_aleatorio(Colores<C> & colores); //Carga un vector de colores
         //No se que nombre ponerle a esto asi que lo deje como cargar
-        void cargar(Grafo<T> & grafo, Colores<T> & colores, map<int,Color> & mapeo_colores); //Carga el grafo, los colores y crea un mapeo que relaciona un vertice y un color;
+        void cargar(Grafo<T> & grafo, Colores<C> & colores, map<int,C> & mapeo_colores); //Carga el grafo, los colores y crea un mapeo que relaciona un vertice y un color;
 
 };
 

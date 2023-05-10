@@ -34,11 +34,13 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/Algoritmos_Busquedas.h" />
 		<Unit filename="include/Color.h" />
 		<Unit filename="include/Colores.h" />
 		<Unit filename="include/Grafo.h" />
 		<Unit filename="include/randomDataLoader.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Algoritmos_Busquedas.cpp" />
 		<Unit filename="src/Color.cpp" />
 		<Unit filename="src/Colores.cpp" />
 		<Unit filename="src/Grafo.cpp" />
