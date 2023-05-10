@@ -37,6 +37,17 @@ bool Color::operator<(const Color & color_a) const
     }
 }
 
+Color & Color::operator=(const Color& b)
+{
+    Color a(this->r,this->g,this->b);
+    return a;
+}
+
+bool Color::operator==(const Color & color_a) const
+{
+    return (this->r == color_a.obtener_RED()) && (this->g == color_a.obtener_GREEN()) && (this->b == color_a.obtener_BLUE());
+}
+
 int Color::obtener_BLUE() const
 {
     return this->b;

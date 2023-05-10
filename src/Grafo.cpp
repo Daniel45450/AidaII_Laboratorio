@@ -68,6 +68,7 @@ template <typename C> Grafo<C> & Grafo<C>::operator = (const Grafo & otroGrafo)
     return *this;
 }
 
+
 template <typename C> Grafo<C>:: ~Grafo()
 {
     //dtor

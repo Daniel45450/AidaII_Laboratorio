@@ -1,30 +1,47 @@
 # depslib dependency file v1.0
-1683234814 source:e:\programas\aida_grafo\src\grafo.cpp
+1683677105 source:e:\programas\aida_grafo\src\grafo.cpp
 	"Grafo.h"
 
-1682924551 e:\programas\aida_grafo\include\grafo.h
+1683677105 e:\programas\aida_grafo\include\grafo.h
 	<list>
 	<map>
 
-1683566146 source:e:\programas\aida_grafo\main.cpp
+1683680325 source:e:\programas\aida_grafo\main.cpp
 	"Grafo.h"
 	"Color.h"
-	"Colores.cpp"
 	"iostream"
 	<set>
+	"randomDataLoader.h"
 
-1683566545 e:\programas\aida_grafo\colores.cpp
+1683666277 e:\programas\aida_grafo\colores.cpp
 	<set>
 	<iostream>
 	"Color.h"
 
-1683566545 source:e:\programas\aida_grafo\colores.cpp
+1683567063 source:e:\programas\aida_grafo\colores.cpp
 	<set>
 	<iostream>
 	"Color.h"
 
-1683566446 source:e:\programas\aida_grafo\src\color.cpp
+1683679781 source:e:\programas\aida_grafo\src\color.cpp
 	"Color.h"
 
-1683566262 e:\programas\aida_grafo\include\color.h
+1683679530 e:\programas\aida_grafo\include\color.h
+
+1683679933 source:e:\programas\aida_grafo\src\colores.cpp
+	"Colores.h"
+	"Color.h"
+
+1683679933 e:\programas\aida_grafo\include\colores.h
+	<vector>
+
+1683679077 source:e:\programas\aida_grafo\src\randomdataloader.cpp
+	"randomDataLoader.h"
+
+1683677527 e:\programas\aida_grafo\include\randomdataloader.h
+	"Grafo.h"
+	"Color.h"
+	"Colores.h"
+	<iostream>
+	<ctime>
 

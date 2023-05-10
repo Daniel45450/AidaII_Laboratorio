@@ -35,10 +35,14 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="include/Color.h" />
+		<Unit filename="include/Colores.h" />
 		<Unit filename="include/Grafo.h" />
+		<Unit filename="include/randomDataLoader.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Color.cpp" />
+		<Unit filename="src/Colores.cpp" />
 		<Unit filename="src/Grafo.cpp" />
+		<Unit filename="src/randomDataLoader.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
