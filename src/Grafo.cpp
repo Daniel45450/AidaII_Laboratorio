@@ -91,7 +91,7 @@ template <typename C> bool Grafo<C>::existe_vertice(int vertice) const //O(log(n
     return false;//O(1)
 }
 
-template <typename C> bool Grafo<C>::existe_arco(int origen, int destino) const //O(k)
+template <typename C> bool Grafo<C>::existe_arco(int origen, int destino) const //O(Max(log(n),k))
 {
     typename map<int, list<Arco>>::const_iterator itV = this->grafo.find(origen); // busco vertice -> O(log(n) n= cantidad_vertices;
     if(itV != this->grafo.end()) { //O(1)
@@ -104,11 +104,11 @@ template <typename C> bool Grafo<C>::existe_arco(int origen, int destino) const 
     return false;
 }
 
-template <typename C> const C & Grafo<C>::costo_arco(int origen, int destino) const
+template <typename C> const C & Grafo<C>::costo_arco(int origen, int destino) const //O(max(log(n), kr))
 {
-   typename map<int, list<Arco>>::const_iterator itV = this->grafo.find(origen);
-   typename list<Arco>::const_iterator itA = itV->second.begin();
-   while(itA != itV->second.end()) {
+   typename map<int, list<Arco>>::const_iterator itV = this->grafo.find(origen); // busco vertice -> O(log(n) n= cantidad_vertices;
+   typename list<Arco>::const_iterator itA = itV->second.begin(); //O(1)
+   while(itA != itV->second.end()) { //Itera O(k) pero tiene devolver_costo -> O(kr) k= cantidad promedio de arcos(adyacentes) por vertice  r: complejidad de costo para copiarse ya que es un tipo generico
     if(itA->devolver_adyacente() == destino) return itA->devolver_costo();
     itA++;
    }
