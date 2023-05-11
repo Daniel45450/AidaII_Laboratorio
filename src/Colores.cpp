@@ -49,7 +49,7 @@ template <typename T> int Colores<T>::eliminar_color(const T & color) //O(n^2)
     }
 }
 
-template <typename T> T Colores<T>::buscar_color_posicion(int n) const //busca un color dada una posicion y devuelve una copia del color
+template <typename T> T Colores<T>::buscar_color_posicion(int n) const //busca un color dada una posicion y devuelve una copia del color O(1)
 {
     return this->colores[n];
 }

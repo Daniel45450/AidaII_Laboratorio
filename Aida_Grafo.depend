@@ -36,8 +36,9 @@
 1683746589 e:\programas\aida_grafo\include\colores.h
 	<vector>
 
-1683694557 source:e:\programas\aida_grafo\src\randomdataloader.cpp
+1683747330 source:e:\programas\aida_grafo\src\randomdataloader.cpp
 	"randomDataLoader.h"
+	<cctype>
 
 1683684380 e:\programas\aida_grafo\include\randomdataloader.h
 	"Grafo.h"
