@@ -11,7 +11,7 @@ template <typename T, typename C> randomDataLoader<T,C>::~randomDataLoader()
     //dtor
 }
 
-template <typename T, typename C> void randomDataLoader<T,C>::cargar_colores_aleatorio(Colores<C> & colores) //O(c)
+template <typename T, typename C> void randomDataLoader<T,C>::cargar_colores_aleatorio(Colores<C> & colores, Color & restriccion) //O(c)
 {
     colores.vaciar();
     cout << "Cargar restriccion(rojo en rgb= 255, 0, 0)" << endl;
@@ -24,7 +24,7 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar_colores_ale
     cin >> g;
     cout << "Ingresa el valor b: ";
     cin >> b;
-    Color restriccion(r,g,b);
+    restriccion.modificar_color(r,g,b);
     colores.agregar_color(restriccion);
     cout << "\nSe agrego como restriccion el color: " << r << " "<< g << " "<< b << " id: " << colores.obtener_cantidad_colores()-1 << "\n";
     int cantidad;
@@ -106,11 +106,11 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar_grafo_aleat
     cout << "----- GENERACION DEL GRAFO FINALIZADA -----" << endl;
 }
 
-template <typename T, typename C> void randomDataLoader<T,C>::cargar(Grafo<T> & grafo, Colores<C> & colores, map<int, C> & mapeo_colores)
+template <typename T, typename C> void randomDataLoader<T,C>::cargar(Grafo<T> & grafo, Colores<C> & colores, map<int, C> & mapeo_colores, Color & restriccion)
 {
     grafo.vaciar();
     this->cargar_grafo_aleatorio(grafo);
-    this->cargar_colores_aleatorio(colores);
+    this->cargar_colores_aleatorio(colores, restriccion);
     list<int> vertices;
     grafo.devolver_vertices(vertices);
     list<int>::iterator it_V = vertices.begin();
@@ -126,6 +126,7 @@ template <typename T, typename C> void randomDataLoader<T,C>::cargar(Grafo<T> & 
             cout << "\n";
             cout << "Ingresa el id del color para asignar al vertice: " << *it_V << " (no olvidar el id de la restriccion): ";
             cin >> id;
+            mapeo_colores.insert({*it_V, colores.buscar_color_posicion(id)});
             it_V++;
         } else {
             id = rand() % colores.obtener_cantidad_colores();

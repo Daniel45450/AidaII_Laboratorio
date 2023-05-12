@@ -15,7 +15,8 @@ bool buscar_camino(const Grafo<int> & grafo, int origen, int destino, const Colo
     while(it_A != adyacentes.end()) //itera O(k) k= promedio de vertices adyacentes
     {
         int adyacente = it_A->devolver_adyacente(); //O(1)
-        if(visitados.find(adyacente) == visitados.end() && mapeo_colores.find(adyacente)->second != restriccion) //O(log(n)) dos find y Color se compara en O(1)
+        typename map<int, Color>::const_iterator it = mapeo_colores.find(adyacente); //O(log(n))
+        if(visitados.find(adyacente) == visitados.end() && it != mapeo_colores.end() && it->second != restriccion)//Color se compara en O(1)
         {
             if(buscar_camino(grafo, adyacente, destino, restriccion, mapeo_colores, visitados, camino)) {
                 return true;

@@ -77,7 +77,7 @@ int main(int argc, char **argv)
         switch(opcion) {
             case 1: {
                 randomDataLoader<int, Color> loader;
-                loader.cargar(g, colores, mapeo_colores);
+                loader.cargar(g, colores, mapeo_colores, restriccion);
                 cout << "Estructura del grafo:\n" << g << "\n" << "Colores creados(r,g,b):\n" << colores << "\n" << "Mapeo de colores:\n"<< mapeo_colores << endl;
                 break;
             }

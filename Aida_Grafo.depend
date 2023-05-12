@@ -6,7 +6,7 @@
 	<list>
 	<map>
 
-1683916605 source:e:\programas\aida_grafo\main.cpp
+1683925731 source:e:\programas\aida_grafo\main.cpp
 	"Grafo.h"
 	"Color.h"
 	"iostream"
@@ -36,18 +36,18 @@
 1683916374 e:\programas\aida_grafo\include\colores.h
 	<vector>
 
-1683917112 source:e:\programas\aida_grafo\src\randomdataloader.cpp
+1683925731 source:e:\programas\aida_grafo\src\randomdataloader.cpp
 	"randomDataLoader.h"
 	<cctype>
 
-1683684380 e:\programas\aida_grafo\include\randomdataloader.h
+1683925731 e:\programas\aida_grafo\include\randomdataloader.h
 	"Grafo.h"
 	"Color.h"
 	"Colores.h"
 	<iostream>
 	<ctime>
 
-1683864223 source:e:\programas\aida_grafo\src\algoritmos_busquedas.cpp
+1683923873 source:e:\programas\aida_grafo\src\algoritmos_busquedas.cpp
 	"Algoritmos_Busquedas.h"
 	<iostream>
 
