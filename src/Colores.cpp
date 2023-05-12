@@ -54,12 +54,12 @@ template <typename T> T Colores<T>::buscar_color_posicion(int n) const //busca u
     return this->colores[n];
 }
 
-template <typename T> int Colores<T>::obtener_cantidad_colores() const
+template <typename T> int Colores<T>::obtener_cantidad_colores() const  //O(1)
 {
     return this->colores.size();
 }
 
-template <typename T> bool Colores<T>::existe_color(int n) const
+template <typename T> bool Colores<T>::existe_color(int n) const //O(1)
 {
     return (n < this->colores.size());
 }

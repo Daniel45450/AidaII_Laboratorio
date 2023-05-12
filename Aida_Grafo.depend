@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1683677105 source:e:\programas\aida_grafo\src\grafo.cpp
+1683764088 source:e:\programas\aida_grafo\src\grafo.cpp
 	"Grafo.h"
 
 1683677105 e:\programas\aida_grafo\include\grafo.h
 	<list>
 	<map>
 
-1683694768 source:e:\programas\aida_grafo\main.cpp
+1683862237 source:e:\programas\aida_grafo\main.cpp
 	"Grafo.h"
 	"Color.h"
 	"iostream"
@@ -24,19 +24,19 @@
 	<iostream>
 	"Color.h"
 
-1683693793 source:e:\programas\aida_grafo\src\color.cpp
+1683851226 source:e:\programas\aida_grafo\src\color.cpp
 	"Color.h"
 
-1683691851 e:\programas\aida_grafo\include\color.h
+1683862198 e:\programas\aida_grafo\include\color.h
 
-1683763682 source:e:\programas\aida_grafo\src\colores.cpp
+1683862198 source:e:\programas\aida_grafo\src\colores.cpp
 	"Colores.h"
 	"Color.h"
 
 1683746589 e:\programas\aida_grafo\include\colores.h
 	<vector>
 
-1683747330 source:e:\programas\aida_grafo\src\randomdataloader.cpp
+1683862198 source:e:\programas\aida_grafo\src\randomdataloader.cpp
 	"randomDataLoader.h"
 	<cctype>
 
@@ -47,7 +47,7 @@
 	<iostream>
 	<ctime>
 
-1683693944 source:e:\programas\aida_grafo\src\algoritmos_busquedas.cpp
+1683862198 source:e:\programas\aida_grafo\src\algoritmos_busquedas.cpp
 	"Algoritmos_Busquedas.h"
 	<iostream>
 

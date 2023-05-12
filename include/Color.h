@@ -20,9 +20,9 @@ class Color
     protected:
 
     private:
-        int r=0;
-        int b=0;
-        int g=0;
+        int r;
+        int b;
+        int g;
 };
 
 #endif // COLOR_H

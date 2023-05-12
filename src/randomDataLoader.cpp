@@ -12,13 +12,13 @@ template <typename T, typename C> randomDataLoader<T,C>::~randomDataLoader()
     //dtor
 }
 
-template <typename T, typename C> void randomDataLoader<T,C>::cargar_colores_aleatorio(Colores<C> & colores)
+template <typename T, typename C> void randomDataLoader<T,C>::cargar_colores_aleatorio(Colores<C> & colores) //O(c)
 {
     int cantidad;
     cout << "Ingresa la cantidad de colores a cargar: ";
     cin >> cantidad;
     srand(time(nullptr)); //Semilla
-    for(int i=0; i<cantidad; i++) {
+    for(int i=0; i<cantidad; i++) { //O(c) c = cantidad
         int r = rand() % 256;
         int g = rand() % 256;
         int b = rand() % 256;

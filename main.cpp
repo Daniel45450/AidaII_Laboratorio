@@ -107,8 +107,13 @@ int main(int argc, char **argv)
                 list<int> camino;
                 set<int> visitados;
                 buscar_camino(g, origen, destino, restriccion, mapeo_colores, visitados, camino);
-                cout << "Camino:\n";
-                cout << camino << "\n";
+                if(camino.empty()) {
+                    cout << "No hay un camino posible entre: " << origen << "->" << destino << endl;
+                } else {
+                 cout << "Camino:\n";
+                 cout << camino << "\n";
+                }
+
             }
             case 4: {
                 salir = true;
