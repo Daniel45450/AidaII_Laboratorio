@@ -64,5 +64,9 @@ template <typename T> bool Colores<T>::existe_color(int n) const //O(1)
     return (n < this->colores.size());
 }
 
+template <typename T> void Colores<T>::vaciar() {
+    this->colores.clear();
+}
+
 template class Colores<Color>;
 template class Colores<int>;

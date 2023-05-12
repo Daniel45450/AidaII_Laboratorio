@@ -17,6 +17,7 @@ template <typename T> class Colores
         bool existe_color(const T & color) const; // verifica si esta agregado un color en la coleccion pasando un color
         bool existe_color(int n) const; //verifica si hay un color en una posicion determinada
         int obtener_cantidad_colores() const;
+        void vaciar();
 
     private:
         vector<T> colores;

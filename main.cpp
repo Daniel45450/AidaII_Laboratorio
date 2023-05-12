@@ -63,41 +63,25 @@ ostream & operator << (ostream & salida, const list<int> & lista)
 int main(int argc, char **argv)
 {
 	Grafo<int> g;
-    int opcion;
+    int opcion=0;
     Color restriccion;
-    bool salir;
     Colores<Color> colores;
     map<int, Color> mapeo_colores;
-    while(!salir) {
+    while(opcion < 3 && opcion >=0) {
         cout << "-- Menu --\n" << endl;
-        cout << "1) Cargar restriccion(rojo en rgb= 255, 0, 0)" << endl;
-        cout << "2) Generar instancia" << endl;
-        cout << "3) Buscar camino restringido" << endl;
-        cout << "4) Salir\n" << endl;
+        cout << "1) Generar instancia" << endl;
+        cout << "2) Buscar camino restringido" << endl;
+        cout << "3) Salir\n" << endl;
         cout << "Ingresa una opcion " << endl;
         cin >> opcion;
         switch(opcion) {
-            case 1:
-            {
-               int r;
-               int g;
-               int b;
-               cout << "Ingresa el valor r: ";
-               cin >> r;
-               cout << "Ingresa el valor g: ";
-               cin >> g;
-               cout << "Ingresa el valor b: ";
-               cin >> b;
-               restriccion.modificar_color(r,g,b);
-               colores.agregar_color(restriccion);
-               cout << "Se agrego como restriccion el color: " << restriccion << " id: " << colores.obtener_cantidad_colores()-1 << "\n";
-            }
-            case 2: {
+            case 1: {
                 randomDataLoader<int, Color> loader;
                 loader.cargar(g, colores, mapeo_colores);
                 cout << "Estructura del grafo:\n" << g << "\n" << "Colores creados(r,g,b):\n" << colores << "\n" << "Mapeo de colores:\n"<< mapeo_colores << endl;
+                break;
             }
-            case 3: {
+            case 2: {
                 int origen;
                 int destino;
                 cout << "Ingresa el origen: ";
@@ -113,13 +97,12 @@ int main(int argc, char **argv)
                  cout << "Camino:\n";
                  cout << camino << "\n";
                 }
-
+                break;
             }
-            case 4: {
-                salir = true;
+            case 3: {
+                opcion = 3;
             }
         }
-
     }
 	return 0;
 }
